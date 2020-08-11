@@ -5,7 +5,7 @@ module.exports.init = function(config, logger, stats) {
       onrequest: function(req, res, next) {
         console.log('---> onrequest()');
         if(req.headers['static-response'] == 'true') {
-          sendStaticResponse(req, res, data, next);
+          sendStaticResponse(req, res, next);
         }
         else {
           next();
