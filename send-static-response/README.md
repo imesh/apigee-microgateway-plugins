@@ -3,16 +3,16 @@
 This Apigee Microgateway plugin illustrates how a static response message can be sent conditionally from an API proxy deployed on Microgateway.
 
 ```js
-// last chunk of request payload data received from client
-onend_request: function(req, res, data, next) {
-console.log('---> onend_request()');
-    if(req.headers['static-response'] == 'true') {
-        sendStaticResponse(req, res, data, next);
-    }
-    else {
-        next(null, data);
-    }
-},
+// indicates start of client request
+   onrequest: function(req, res, next) {
+     console.log('---> onrequest()');
+     if(req.headers['static-response'] == 'true') {
+       sendStaticResponse(req, res, next);
+     }
+     else {
+       next();
+     }
+   },
 ```
 
 ```js
@@ -24,7 +24,6 @@ function sendStaticResponse(req, res, next) {
 
     if (!res.finished) res.setHeader('content-type', 'application/json');
     res.end(JSON.stringify(response));
-    next(null, response);
 }
 ```
 
