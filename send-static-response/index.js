@@ -1,10 +1,15 @@
 module.exports.init = function(config, logger, stats) {
-  
+
     return {
       // indicates start of client request
       onrequest: function(req, res, next) {
         console.log('---> onrequest()');
-        next();
+        if(req.headers['static-response'] == 'true') {
+          sendStaticResponse(req, res, data, next);
+        }
+        else {
+          next();
+        }
       },
       
       // chunk of request payload data received from client
@@ -16,12 +21,7 @@ module.exports.init = function(config, logger, stats) {
       // last chunk of request payload data received from client
       onend_request: function(req, res, data, next) {
         console.log('---> onend_request()');
-        if(req.headers['static-response'] == 'true') {
-            sendStaticResponse(req, res, data, next);
-        }
-        else {
-            next(null, data);
-        }
+        next(null, data);
       },
   
       // indicates start of target response
@@ -52,5 +52,4 @@ function sendStaticResponse(req, res, next) {
 
     if (!res.finished) res.setHeader('content-type', 'application/json');
     res.end(JSON.stringify(response));
-    next(null, response);
 }
