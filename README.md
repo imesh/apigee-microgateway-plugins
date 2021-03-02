@@ -3,6 +3,7 @@
 This repository contains Apigee Microgateway Plugin examples.
 
 - [Send Static Response](/send-static-response)
+- [Normalize Response Headers](/normalize-response-headers)
 
 ## License
 
