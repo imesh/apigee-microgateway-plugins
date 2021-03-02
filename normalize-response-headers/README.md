@@ -1,6 +1,6 @@
 # Apigee Microgateway Plugin - Normalize Response Headers
 
-Apigee Microgateway returns all response headers in lowercase characters. This Microgateway plugin can be used for normalizing the case if required.
+Apigee Microgateway returns all response headers in lowercase characters. This Microgateway plugin can be used for normalizing the case of response headers if required.
 
 ```js
    // last chunk of response payload data received from target
