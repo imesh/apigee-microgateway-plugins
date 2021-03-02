@@ -30,6 +30,33 @@ function normalizeResponseHeaders(res) {
 }
 ```
 
+## How to Install
+
+1. Copy `normalize-response-headers` plugin content given in this git repository folder to your local Microgateway plugins folder.
+
+2. Install dependencies of `normalize-response-headers` plugin:
+   ```bash
+   cd normalize-response-headers/
+   npm install header-case-normalizer
+   ```
+
+3. Update Microgateway configuration file and engage `normalize-response-headers` plugin:
+   ```
+   ...
+   edgemicro:
+     port: 8000
+     max_connections: 1000
+     config_change_poll_interval: 600
+     logging:
+       ...
+     plugins:
+       sequence:
+       - normalize-response-headers
+   ...
+   ```
+
+4. Start Microgateway, send an API request and verify the plugin.
+
 ## An Example Usage
 
 ```bash
