@@ -3,9 +3,9 @@ var normalizeHeaderCase = require("header-case-normalizer");
 module.exports.init = function(config, logger, stats) {
     return {
       // last chunk of response payload data received from target
-      onend_response: function(req, res, data, next) {
+      onend_response: async function(req, res, data, next) {
         console.log('---> onend_response()');
-        normalizeResponseHeaders(res);
+        await normalizeResponseHeaders(res);
         next(null, data);
       }
     };
