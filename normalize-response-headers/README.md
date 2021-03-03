@@ -3,12 +3,16 @@
 Apigee Microgateway returns all response headers in lowercase characters. This Microgateway plugin can be used for normalizing the case of response headers if required.
 
 ```js
-   // last chunk of response payload data received from target
-   onend_response: function(req, res, data, next) {
-      console.log('---> onend_response()');
-      normalizeResponseHeaders(res);
-      next(null, data);
-   }
+   module.exports.init = function(config, logger, stats) {
+    return {
+      // last chunk of response payload data received from target
+      onend_response: async function(req, res, data, next) {
+        console.log('---> onend_response()');
+        await normalizeResponseHeaders(res);
+        next(null, data);
+      }
+    };
+  }
 ```
 
 ```js
