@@ -9,3 +9,7 @@ This repository contains Apigee Microgateway Plugin examples.
 ## License
 
 [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+
+## Disclaimer
+
+This is not an officially supported Google product.

@@ -115,3 +115,6 @@ Transfer-Encoding: chunked
 - [Apigee Microgateway v3.2.x Plugins Documentation](https://docs.apigee.com/api-platform/microgateway/3.2.x/use-plugins)
 - [Apigee Microgateway Plugins Git Repository](https://github.com/apigee/microgateway-plugins)
 
+## Disclaimer
+
+This is not an officially supported Google product.

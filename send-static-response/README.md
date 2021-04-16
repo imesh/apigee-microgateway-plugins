@@ -43,3 +43,7 @@ Content-Length: 53
 ## References
 - [Apigee Microgateway v3.1.x Plugins Documentation](https://docs.apigee.com/api-platform/microgateway/3.1.x/use-plugins)
 - [Apigee Microgateway Plugins Git Repository](https://github.com/apigee/microgateway-plugins)
+
+## Disclaimer
+
+This is not an officially supported Google product.
